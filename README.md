@@ -89,7 +89,7 @@ The script follows a decoupled collector-orchestrator pattern:
 
 3. **Run a standard console audit:**
    ```powershell
-   .\Invoke-WindowsSecurityAudit.ps1
+   .\Invoke-WindowsSecurityAudit.ps1 -ExportHtml -ExportJson -LaunchHtml -Verbose
    ```
 
 4. **Run with verbose logging and export a JSON report:**
@@ -97,31 +97,6 @@ The script follows a decoupled collector-orchestrator pattern:
    .\Invoke-WindowsSecurityAudit.ps1 -ExportJson -OutputPath ".\reports\host_audit.json" -Verbose
    ```
 
----
-
-### JSON Telemetry Output (`-ExportJson`)
-```json
-{
-  "HostName": "WORKSTATION-01",
-  "ScanTimestamp": "2026-10-18T20:15:30.1234567+08:00",
-  "ElevatedScan": true,
-  "TotalRiskScore": 21,
-  "RiskRating": "Moderate Risk",
-  "Findings": [
-    {
-      "CheckID": "CRED-01",
-      "Domain": "Credential Protection",
-      "Title": "LSASS Protected Process Light (RunAsPPL) Not Enforced",
-      "Severity": "High",
-      "ScoreWeight": 8,
-      "MitreID": "T1003.001 (OS Credential Dumping: LSASS Memory)",
-      "CurrentState": "RunAsPPL value is '' (Expected: 1 or 2).",
-      "Remediation": "Set HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RunAsPPL to 1.",
-      "Timestamp": "2026-10-18 20:15:30"
-    }
-  ]
-}
-```
 
 ##  Ethical & Legal Disclaimer
 
