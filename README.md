@@ -79,7 +79,7 @@ The script follows a decoupled collector-orchestrator pattern:
 1. **Clone the repository:**
    ```powershell
    git clone https://github.com/bashcpe/WinBash_SecurityAudit
-   cd WinPosture-Audit
+   cd WinBash_SecurityAudit
    ```
 
 2. **Bypass execution policy for the current session (if required):**
