@@ -1,0 +1,3 @@
+# Ignore generated scan reports so personal host data is never uploaded
+reports/*.json
+reports/*.html
